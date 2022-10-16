@@ -1,0 +1,44 @@
+Sub Workbook_Open()
+
+Worksheets("Sheet1").Columns("A:D").AutoFit
+Range("A:D").Select
+With Selection
+        .HorizontalAlignment = xlCenter
+    End With
+Worksheets("Sheet1").Range("A1:D1").Font.Bold = True
+Range("A1:D1").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .Color = 5287936
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+
+Worksheets("Sheet2").Columns("A:D").AutoFit
+Range("A:D").Select
+With Selection
+        .HorizontalAlignment = xlCenter
+    End With
+Worksheets("Sheet2").Range("A1:D1").Font.Bold = True
+Range("A1:D1").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .Color = 5287936
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+
+
+
+Dim rangeG As range
+Dim conter As Integer
+counter = range("A2").End(xlDown).Row
+
+Set rangeG = range("D2", ("D" & counter))
+
+rangeG.FormulaR1C1 = "=RC[-2]*RC[-1]"
+
+   
+End Sub
